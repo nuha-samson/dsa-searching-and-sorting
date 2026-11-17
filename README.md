@@ -82,6 +82,3 @@ I added some checks to make sure the program doesn't crash:
 
 **Space Complexity:** Everything here uses O(1) auxiliary space because the sorting is done in-place.
 
----
-
-*Developed for the Data Structures and Algorithms course.*
