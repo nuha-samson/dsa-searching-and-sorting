@@ -1,61 +1,20 @@
 # DSA Searching and Sorting
 
-This is Program I created shows how three different sorting algorithms and two searching algorithms work. The user can put in their own numbers, pick a sorting method, and then search for a specific value using linear and binary search.
+I created a program that shows how three different sorting algorithms and two searching algorithms work. Basically, the user puts in some numbers, picks a sorting method, and then the program searches for a specific value using linear and binary search.
 
-### 1. Sorting Algorithms
+## 1. How it works
 
-I used these three sorting methods in the program:
+The program basically does this:
 
-- **Bubble Sort:** Basically just compares two numbers next to each other and swaps them if they're in the wrong order.
-- **Selection Sort:** Looks for the smallest number in the unsorted part and moves it to the front.
-- **Insertion Sort:** Builds the sorted list one element at a time by putting each number in its right spot.
+1. Asks for the number of elements and the actual values.
+2. Asks the user to pick a sorting algorithm.
+3. Sorts the array (ascending).
+4. Prints the sorted array.
+5. Asks for a target number to search for.
+6. Runs both linear and binary search.
+7. Shows the index where the number was found (starting from 0).
 
-### 2. Searching Algorithms
-
-- **Linear Search:** Just goes through the list one by one until it finds the number or hits the end.
-- **Binary Search:** Keeps splitting the search area in half to find the target faster. (Note: the array has to be sorted for this to work).
-
-## Time and Space Complexity
-
-### Searching Algorithms
-
-| Algorithm | Best Case | Average Case | Worst Case |
-|---|---|---|---|
-| Linear Search | O(1) | O(n) | O(n) |
-| Binary Search | O(1) | O(log n) | O(log n) |
-
-### Sorting Algorithms
-
-| Algorithm | Best Case | Average Case | Worst Case |
-|---|---|---|---|
-| Bubble Sort | O(n) | O(n²) | O(n²) |
-| Selection Sort | O(n²) | O(n²) | O(n²) |
-| Insertion Sort | O(n) | O(n²) | O(n²) |
-
-**Space Complexity:** All the sorting algorithms are done in-place, so they use O(1) extra space. The searching algorithms also use O(1).
-
-## Program Features
-
-- Lets the user enter an array of integers.
-- User can pick which sorting algorithm to use.
-- Prints the sorted array to the screen.
-- Searches for a target value using both search methods.
-- Checks that the input is actually an integer and makes sure the array size isn't negative.
-- Won't crash if the array is empty.
-- Tells you the index of the number if it's found, or says it's not there.
-## Input Validation and Error Handling
-
-The program accounts for the following invalid inputs and edge cases:
-
-- **Non-integer input:** Detects invalid input when reading array size, array elements, sorting choices, or the search target. Clears the input error state and ignores the remaining invalid input before prompting again.
-- **Negative array size:** Rejects negative values and asks the user to enter a valid size.
-- **Empty array:** Detects when the array size is zero and terminates gracefully without attempting sorting or searching.
-- **Invalid sorting choice:** Rejects choices outside the available range (1–3) and prompts the user again.
-- **Unsuccessful search:** Returns `-1` when the target is not present in the array and displays an appropriate message instead of accessing an invalid index.
-- **Duplicate elements:** Handles repeated values correctly. Linear and binary search may return different valid indexes when duplicates exist.
-- **Binary search prerequisite:** Ensures binary search is performed only after the selected sorting algorithm has arranged the array in ascending order.
-
-## Example Execution
+### Example
 
 ```text
 How many numbers do you want to enter? 5
@@ -81,7 +40,48 @@ Linear search : found at index 2
 Binary search : found at index 2
 ```
 
+## 2. Input Validation and Errors
+
+I added some checks to make sure the program doesn't crash:
+
+- **Non-integers:** If the user types a letter or symbol instead of a number, the program clears the error and asks them to try again.
+- **Negative size:** If the user enters a negative number for the array size, it tells them it's invalid.
+- **Empty array:** If the size is 0, the program just ends since there's nothing to sort.
+- **Wrong choice:** If the user picks something other than 1, 2, or 3 for sorting, it asks them again.
+- **Not found:** If the number isn't in the array, it returns `-1` and says it wasn't found.
+- **Duplicates:** The program handles duplicate numbers. Just keep in mind that linear and binary search might return different indexes if the number appears more than once.
+- **Binary search rule:** The program makes sure the array is sorted first, otherwise binary search wouldn't work.
+
+## 3. Algorithms Used
+
+### Sorting
+- **Bubble Sort:** Keeps swapping adjacent elements until they are in order.
+- **Selection Sort:** Finds the smallest number and moves it to the front.
+- **Insertion Sort:** Builds the sorted list one element at a time.
+
+### Searching
+- **Linear Search:** Just goes through the array one by one until it finds the target.
+- **Binary Search:** Splits the sorted array in half repeatedly to find the target faster.
+
+## 4. Time and Space Complexity
+
+### Searching
+
+| Algorithm | Best Case | Average Case | Worst Case |
+|---|---|---|---|
+| Linear Search | O(1) | O(n) | O(n) |
+| Binary Search | O(1) | O(log n) | O(log n) |
+
+### Sorting
+
+| Algorithm | Best Case | Average Case | Worst Case |
+|---|---|---|---|
+| Bubble Sort | O(n) | O(n²) | O(n²) |
+| Selection Sort | O(n²) | O(n²) | O(n²) |
+| Insertion Sort | O(n) | O(n²) | O(n²) |
+
+**Space Complexity:** Everything here uses O(1) auxiliary space because the sorting is done in-place.
 
 ---
 
-*Developed as part of the Data Structures and Algorithms course*
+*Developed for the Data Structures and Algorithms course.*
