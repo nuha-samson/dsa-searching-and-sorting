@@ -43,6 +43,17 @@ I used these three sorting methods in the program:
 - Checks that the input is actually an integer and makes sure the array size isn't negative.
 - Won't crash if the array is empty.
 - Tells you the index of the number if it's found, or says it's not there.
+## Input Validation and Error Handling
+
+The program accounts for the following invalid inputs and edge cases:
+
+- **Non-integer input:** Detects invalid input when reading array size, array elements, sorting choices, or the search target. Clears the input error state and ignores the remaining invalid input before prompting again.
+- **Negative array size:** Rejects negative values and asks the user to enter a valid size.
+- **Empty array:** Detects when the array size is zero and terminates gracefully without attempting sorting or searching.
+- **Invalid sorting choice:** Rejects choices outside the available range (1–3) and prompts the user again.
+- **Unsuccessful search:** Returns `-1` when the target is not present in the array and displays an appropriate message instead of accessing an invalid index.
+- **Duplicate elements:** Handles repeated values correctly. Linear and binary search may return different valid indexes when duplicates exist.
+- **Binary search prerequisite:** Ensures binary search is performed only after the selected sorting algorithm has arranged the array in ascending order.
 
 ## Example Execution
 
