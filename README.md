@@ -1,18 +1,19 @@
 # DSA Searching and Sorting
 
-A C++ console application demonstrating three sorting algorithms and two searching algorithms. The program accepts user input, sorts the array using a selected algorithm, and searches for a target value using both linear and binary search
+This is Program I created shows how three different sorting algorithms and two searching algorithms work. The user can put in their own numbers, pick a sorting method, and then search for a specific value using linear and binary search.
+
 ### 1. Sorting Algorithms
 
-The program implements three comparison-based sorting algorithms:
+I used these three sorting methods in the program:
 
-- **Bubble Sort:** Repeatedly compares adjacent elements and swaps them when they are in the wrong order.
-- **Selection Sort:** Finds the smallest element in the unsorted portion and places it in its correct position.
-- **Insertion Sort:** Builds a sorted portion of the array by inserting each element into its appropriate position.
+- **Bubble Sort:** Basically just compares two numbers next to each other and swaps them if they're in the wrong order.
+- **Selection Sort:** Looks for the smallest number in the unsorted part and moves it to the front.
+- **Insertion Sort:** Builds the sorted list one element at a time by putting each number in its right spot.
 
 ### 2. Searching Algorithms
 
-- **Linear Search:** Checks elements sequentially until the target is found or the array ends.
-- **Binary Search:** Repeatedly divides the search interval in half to locate the target. It requires a sorted array.
+- **Linear Search:** Just goes through the list one by one until it finds the number or hits the end.
+- **Binary Search:** Keeps splitting the search area in half to find the target faster. (Note: the array has to be sorted for this to work).
 
 ## Time and Space Complexity
 
@@ -31,17 +32,17 @@ The program implements three comparison-based sorting algorithms:
 | Selection Sort | O(n²) | O(n²) | O(n²) |
 | Insertion Sort | O(n) | O(n²) | O(n²) |
 
-**Space Complexity:** All three sorting algorithms are implemented in-place and use O(1) auxiliary space. Both searching algorithms also use O(1) auxiliary space.
+**Space Complexity:** All the sorting algorithms are done in-place, so they use O(1) extra space. The searching algorithms also use O(1).
 
 ## Program Features
 
-- Accepts an array of integers from the user.
-- Allows the user to select one of three sorting algorithms.
-- Displays the sorted array.
-- Searches for a target using both linear and binary search.
-- Validates integer input and rejects negative array sizes.
-- Handles empty arrays without attempting to sort or search them.
-- Reports the index of a found element or indicates when the target is absent.
+- Lets the user enter an array of integers.
+- User can pick which sorting algorithm to use.
+- Prints the sorted array to the screen.
+- Searches for a target value using both search methods.
+- Checks that the input is actually an integer and makes sure the array size isn't negative.
+- Won't crash if the array is empty.
+- Tells you the index of the number if it's found, or says it's not there.
 
 ## Example Execution
 
@@ -69,8 +70,7 @@ Linear search : found at index 2
 Binary search : found at index 2
 ```
 
-*Note: Array indexing starts from zero.*
 
 ---
 
-*Developed as part of the Data Structures and Algorithms cour
+*Developed as part of the Data Structures and Algorithms course*
